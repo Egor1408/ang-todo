@@ -1,0 +1,10 @@
+<div class="todo-item">
+        <input id={{todoItem.id}} class='todo-item__checkbox' type='checkbox'>
+        <label 
+            for={{todoItem.id}}
+            (click)="labelClick(todoItem.id)"
+        >
+            <span class='todo-item__desc' [class.checked]="todoItem.checked">{{todoItem.desc}}</span>
+        </label> 
+    <span (click)="delItem(todoItem.id)" class='todo-item__delBtn'></span>
+</div>

@@ -1,0 +1,8 @@
+<div class="todo-list">
+    <app-todo-item 
+    *ngFor = "let todoItem of todoList"
+    [todoItem] = "todoItem"
+    (transDelId) = "transDelId($event)"
+    (transLabelId) = "transLabelId($event)"
+    class='todo-item'></app-todo-item>
+</div>

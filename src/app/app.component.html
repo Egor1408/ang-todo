@@ -1,0 +1,25 @@
+<div class="body">
+  <div class="container">
+    <h1 class='title'>TODOS</h1>
+    <div class='todo'>
+        <app-header
+          (newTodo) = "updateList($event)"
+        ></app-header>
+        <app-todo-list
+          *ngIf = "todoList.length; else emptyList" 
+          [todoList] = "todoList"
+          (delId) = "delId($event)"
+          (checkId) = "checkId($event)"
+        ></app-todo-list>
+        <app-footer
+          [uncompletedTask] = "uncompletedTask"
+        ></app-footer>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyList>
+  <div class='empty'>
+    <p>there is no task</p>
+  </div>
+</ng-template>
