@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Filter } from '../app.component';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+
   @Input() uncompletedTask:number
+  @Input() filterList: Filter[]
+  @Output() changeFilter: EventEmitter<string> = new EventEmitter<string>()
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  filterClick(item: string) {
+    this.changeFilter.emit(item)
+  }
 }

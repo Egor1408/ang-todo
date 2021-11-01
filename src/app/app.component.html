@@ -7,12 +7,14 @@
         ></app-header>
         <app-todo-list
           *ngIf = "todoList.length; else emptyList" 
-          [todoList] = "todoList"
+          [todoList] = "viewList"
           (delId) = "delId($event)"
           (checkId) = "checkId($event)"
         ></app-todo-list>
         <app-footer
+          [filterList] = "filterList"
           [uncompletedTask] = "uncompletedTask"
+          (changeFilter)="changeFilter($event)"
         ></app-footer>
     </div>
   </div>

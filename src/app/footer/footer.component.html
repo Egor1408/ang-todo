@@ -1,8 +1,8 @@
 <div class="footer">
     <div class="filters">
-        <span>all</span>
-        <span>not completed</span>
-        <span>completed</span>
+        <span *ngFor="let item of filterList"
+            [class.active]="item.active" 
+            (click)="filterClick(item.name)">{{item.name}}</span>
     </div>
     <div class="not-copmleted">
         not completed: <span>{{uncompletedTask}}</span>

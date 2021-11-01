@@ -14,6 +14,8 @@ export class TodoListComponent implements OnInit {
 
   constructor() {}
   ngOnInit(): void {
+    console.log(this.todoList);
+    
   }
 
   transDelId(id: number) {

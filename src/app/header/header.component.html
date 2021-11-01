@@ -2,6 +2,7 @@
     <span>New todo:</span>
     <input type='text' 
     placeholder="new todo..."
-    [(ngModel)] = "inputValue">
+    [(ngModel)] = "inputValue"
+    (keyup.enter)="addTodo()">
     <button (click)="addTodo()" class='addBtn'></button>
 </div>
